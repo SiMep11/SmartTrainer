@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#02496A"
+                android:paddingTop="20dp"
+                android:visibility="visible">
+
+                <android.widget.TextView
+                    android:id="@+id/tvUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bebas_neue"
+                    android:text="Welcome,"
+                    android:textColor="#0F0E0E"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <android.widget.ImageButton
+                    android:id="@+id/imageButtonDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="true"
+                    android:src="@drawable/icons8_logout_50"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </androidx.appcompat.widget.Toolbar>
+
+            <TextView
+                android:id="@+id/tvEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="No Workouts in the database"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <ImageButton
+        android:id="@+id/imageButtonAdd"
+        android:layout_width="84dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_anchor="@+id/nestedScrollView"
+        app:layout_anchorGravity="end|bottom"
+        app:srcCompat="@drawable/icons8_add_50"
+        tools:ignore="SpeakableTextPresentCheck" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

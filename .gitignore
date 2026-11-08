@@ -1,0 +1,37 @@
+# Gradle / build output
+.gradle/
+.kotlin/
+build/
+
+# Local configuration: SDK path and API keys (never commit)
+local.properties
+secrets.properties
+.env
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Compiled and packaged files
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+
+# Signing keys and Google services config
+*.jks
+*.keystore
+google-services.json
+
+# Logs and profiling
+*.log
+*.hprof
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini

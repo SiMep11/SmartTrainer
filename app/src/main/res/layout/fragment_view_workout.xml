@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background"
+    android:orientation="vertical"
+    tools:context=".ViewWorkoutFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#02496A"
+        android:paddingTop="20dp"
+        android:visibility="visible">
+
+        <android.widget.TextView
+            android:id="@+id/tvWorkout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bebas_neue"
+            android:text=""
+            android:textColor="#0F0E0E"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <android.widget.ImageButton
+            android:id="@+id/imageButtonDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:backgroundTint="@android:color/transparent"
+            android:clickable="true"
+            android:src="@android:drawable/ic_menu_delete"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewWorkouts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="40dp"
+        android:scrollbars="vertical" />
+</LinearLayout>

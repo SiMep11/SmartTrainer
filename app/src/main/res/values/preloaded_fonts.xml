@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/alegreya_sc</item>
+        <item>@font/archivo_bold</item>
+        <item>@font/asset</item>
+        <item>@font/bebas_neue</item>
+        <item>@font/cormorant_sc_light</item>
+        <item>@font/rosarivo</item>
+    </array>
+</resources>

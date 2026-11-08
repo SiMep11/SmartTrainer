@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/signInFragment">
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.popoli.smarttrainer.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/notRegistered"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/succesfullSignIn"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.popoli.smarttrainer.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/justRegistered"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/alreadyRegistered"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.popoli.smarttrainer.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <argument
+            android:name="username"
+            app:argType="string"
+            android:defaultValue="" />
+        <action
+            android:id="@+id/addWorkoutPlan"
+            app:destination="@id/addWorkoutPlanFragment" />
+        <action
+            android:id="@+id/viewWorkouts"
+            app:destination="@id/viewWorkoutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addWorkoutPlanFragment"
+        android:name="com.popoli.smarttrainer.AddWorkoutPlanFragment"
+        android:label="fragment_add_workout_plan"
+        tools:layout="@layout/fragment_add_workout_plan">
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <action
+            android:id="@+id/workoutGenerated"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewWorkoutFragment"
+        android:name="com.popoli.smarttrainer.ViewWorkoutFragment"
+        android:label="fragment_view_workout"
+        tools:layout="@layout/fragment_view_workout" >
+        <argument
+            android:name="wpId"
+            app:argType="long" />
+        <argument
+            android:name="wpName"
+            app:argType="string"
+            android:defaultValue="workout" />
+        <action
+            android:id="@+id/deletedWorkout"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
